@@ -1,43 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Banknote, ShoppingCart, MessageCircle, CreditCard } from 'lucide-react';
+import {
+  Phone, Mail, MapPin, Clock, Banknote, ShoppingCart, MessageCircle, CreditCard
+} from 'lucide-react';
+
+const contactItems = [
+  { label: 'Phone Number', icon: Phone, value: <a href="tel:+919980237827" className="underline">+91 93802 37827</a> },
+  { label: 'WhatsApp', icon: MessageCircle, value: <a href="https://wa.me/9986368489" target="_blank" className="underline">Message on WhatsApp</a> },
+  { label: 'Email', icon: Mail, value: <a href="mailto:vinaylakamanahalli@gmail.com" className="underline">vinaylakamanahalli@gmail.com</a> },
+  { label: 'EMI Options', icon: CreditCard, value: 'Available for major appliances and electronics---contact us' },
+  { label: 'Bank Options', icon: Banknote, value: 'SBI, HDFC, ICICI, Axis – Credit/Debit accepted' },
+  { label: 'Delivery Timings', icon: ShoppingCart, value: '10:00 AM – 7:00 PM (All days except Sunday)' },
+  { label: 'Shop Hours', icon: Clock, value: 'Opens at 9:30 AM and Closes at 8:00 PM' },
+  { label: 'Address', icon: MapPin, value: 'Shivaji Circle, Dharwad, Karnataka, India' },
+  { label: 'Location', icon: MapPin, value: <a href="https://maps.google.com/?q=Shivaji+Circle,+Dharwad,+Karnataka,+India" target="_blank" className="underline">View on Google Maps</a> },
+];
 
 const ContactPage = () => {
   return (
-    <div className="bg-yellow-600 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <motion.div 
-        className="max-w-4xl mx-auto p-4"
-        initial={{ opacity: 0, y: 50 }}
+    <div className="bg-gradient-to-br from-orange-300 to-orange-300 min-h-screen py-12 px-6">
+      <motion.div
+        className="max-w-5xl mx-auto"
+        initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <motion.h1 
-          className="text-5xl font-bold text-black mb-2 text-center drop-shadow-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
-        >
-          KookKart
-        </motion.h1>
-
-        <motion.p 
-          className="text-lg text-black font-sans mb-8 text-center leading-relaxed max-w-3xl mx-auto "
+        <motion.h1
+          className="text-5xl font-extrabold text-gray-900 text-center mb-6 drop-shadow-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Welcome to KookKart – your one-stop destination for all home and kitchen appliance needs. With over a decade of trusted service, we pride ourselves on delivering top-quality products and unmatched customer support. From modern kitchen tools to essential household electronics, we cater to every corner of your home. Our experience ensures smooth purchasing, multiple payment options including EMI, and reliable delivery. We partner with top brands and banks to offer seamless solutions for all families. Located in the heart of Dharwad, KookKart stands as a symbol of trust, affordability, and excellence in home shopping.
+          Welcome to KookKart 🛍️
+        </motion.h1>
+
+        <motion.p
+          className="text-lg text-gray-800 text-center leading-relaxed max-w-3xl mx-auto mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          At <strong>KookKart</strong>, we redefine home and kitchen shopping in Dharwad. Trusted by thousands, our curated selection of modern appliances, EMI-friendly payments, and reliable doorstep delivery make us your go-to destination for quality and convenience. From mixer grinders to refrigerators, we bring innovation and affordability under one roof – with service that feels like family.
         </motion.p>
 
-        <motion.div 
-          className="pt-6 space-y-6"
+        <motion.div
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2"
           initial="hidden"
           animate="visible"
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              y: 0,
               transition: {
                 delayChildren: 0.2,
                 staggerChildren: 0.15,
@@ -45,30 +58,23 @@ const ContactPage = () => {
             }
           }}
         >
-          <ul className="space-y-4 text-black">
-            {[ 
-              { label: 'Phone Number', icon: <Phone size={20} className="inline mr-2 text-black" />, value: <a href="tel:+919986368489" className="underline">+91 9380237827</a> },
-              { label: 'WhatsApp', icon: <MessageCircle size={20} className="inline mr-2 text-black" />, value: <a href="https://wa.me/9986368489" target="_blank" className="underline">Message on WhatsApp</a> },
-              { label: 'Email', icon: <Mail size={20} className="inline mr-2 text-black" />, value: <a href="mailto:vinaylakamanahalli@gmail.com" className="underline">vinaylakamanahalli@gmail.com</a> },
-              { label: 'EMI Options', icon: <CreditCard size={20} className="inline mr-2 text-black" />, value: 'Available for major appliances and electronics' },
-              { label: 'Bank Options', icon: <Banknote size={20} className="inline mr-2 text-black" />, value: 'SBI, HDFC, ICICI, Axis Bank – Credit/Debit accepted   - -for more information call/message us' },
-              { label: 'Delivery Timings', icon: <ShoppingCart size={20} className="inline mr-2 text-black" />, value: '10:00 AM – 7:00 PM (All days except Sunday)' },
-              { label: 'Shop Hours', icon: <Clock size={20} className="inline mr-2 text-black" />, value: 'Opens at 9:30 AM and Closes at 8:00 PM' },
-              { label: 'Address', icon: <MapPin size={20} className="inline mr-2 text-black" />, value: 'Shivaji Circle, Dharwad, Karnataka, India' },
-              { label: 'Location', icon: <MapPin size={20} className="inline mr-2 text-black" />, value: <a href="https://maps.google.com/?q= badishop+Shivaji+Circle,+Dharwad,+Karnataka,+India" target="_blank" className="underline">View on Google Maps</a> },
-            ].map((item, index) => (
-              <motion.li 
-                key={index} 
-                className="bg-amber-200/60 hover:bg-amber-200 transition p-4 rounded-xl shadow"
-                variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-              >
-                <div className="flex items-center">
-                  {item.icon}
-                  <span className="font-semibold mr-2">{item.label}:</span> {item.value}
-                </div>
-              </motion.li>
-            ))}
-          </ul>
+          {contactItems.map((item, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-start p-5 rounded-xl backdrop-blur-lg bg-white/60 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
+            >
+              <div className="w-10 h-10 mr-4 flex items-center justify-center bg-yellow-500/30 text-yellow-800 rounded-full">
+                <item.icon size={20} />
+              </div>
+              <div>
+                <p className="text-base font-semibold text-gray-800">{item.label}</p>
+                <p className="text-sm text-gray-700 mt-1">{item.value}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </div>
@@ -76,4 +82,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-

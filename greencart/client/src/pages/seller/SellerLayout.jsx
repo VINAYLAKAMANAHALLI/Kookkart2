@@ -30,7 +30,7 @@ const SellerLayout = () => {
 
     return (
         <>
-            <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white">
+            <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-400 py-3 bg-white">
                 <Link to='/'>
                     <img src={assets.logo} alt="log" className="cursor-pointer w-34 md:w-38" />
                 </Link>
@@ -45,7 +45,7 @@ const SellerLayout = () => {
                     <NavLink to={item.path} key={item.name} end={item.path === "/seller"}
                         className={({isActive})=>`flex items-center py-3 px-4 gap-3 
                             ${isActive ? "border-r-4 md:border-r-[6px] bg-primary/10 border-primary text-primary"
-                                : "hover:bg-gray-200/90 border-white"
+                                : "hover:bg-gray-100/90 border-white"
                             }`
                         }
                     >
